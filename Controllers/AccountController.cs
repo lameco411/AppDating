@@ -52,7 +52,7 @@ namespace DatingApp.Controllers
                 if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Password incorrect");
 
             }
-            return new UserDto { Usernane = user.Username, Token = _tokenService.CreateToken(user) };
+            return new UserDto { Username = user.Username, Token = _tokenService.CreateToken(user) };
         }
         private async Task<bool> UserExists(string username)
         {
